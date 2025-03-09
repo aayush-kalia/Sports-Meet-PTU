@@ -69,7 +69,9 @@ body {
   text-align: center;
 }
 .event-title{
-  font-size: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  padding-bottom: 10px;
 }
 
 /* Events Section */
@@ -92,6 +94,9 @@ body {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
   transition: transform 0.2s ease-in-out;
+}
+.dropdown{
+  font-size: 1rem;
 }
 
 
@@ -131,4 +136,24 @@ body {
 .athlete-form input[type="file"] {
   border: none;
   background: #f4f4f4;
+}
+/* Submit Button */
+.submit-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.submit-btn {
+  padding: 15px 30px;
+  font-size: 1.5rem;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #218838;
 }

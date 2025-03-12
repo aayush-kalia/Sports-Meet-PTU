@@ -68,11 +68,6 @@ body {
   text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
   text-align: center;
 }
-.event-title{
-  font-size: 2rem;
-  font-weight: bold;
-  padding-bottom: 10px;
-}
 
 /* Events Section */
 .events-container {
@@ -95,10 +90,6 @@ body {
   text-align: center;
   transition: transform 0.2s ease-in-out;
 }
-.dropdown{
-  font-size: 1rem;
-}
-
 
 .event-card:hover {
   transform: scale(1.05);

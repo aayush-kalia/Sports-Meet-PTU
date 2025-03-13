@@ -193,10 +193,16 @@ function Homepage() {
         </section>
       </div>
       <footer className="footer">
-        <p>
-          Made by Genconians, with &#x2764;&#xfe0f; &copy;{" "}
-          {new Date().getFullYear()} All rights reserved.
-        </p>
+        <div className="footer-content">
+          <p>
+            Made by Genconians, with &#x2764;&#xfe0f; &copy;{" "}
+            {new Date().getFullYear()} All rights reserved.
+          </p>
+          <p>
+            Contact us:{" "}
+            <a href="mailto:athleticptu@gmail.com">athleticptu@gmail.com</a>
+          </p>
+        </div>
       </footer>
     </>
   );

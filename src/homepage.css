@@ -5,14 +5,18 @@ body {
   padding: 0;
   background-color: #f4f4f4;
 }
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+}
 
 .container {
   width: 100%;
   max-width: 1200px;
   margin: auto;
   margin-top: 62px;
-  padding: 20px;
-
   box-sizing: border-box;
 }
 
@@ -56,41 +60,36 @@ body {
 .navbar a:hover {
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 5px;
-}
-
-/* Reset body and HTML margins */
-body, html {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden; /* Prevents horizontal scrolling */
+  padding: 8px;
 }
 
 /* Hero Section */
 .hero {
   position: relative;
-  width: 100vw;
-  height: 100vh;
+  width: 99vw;
+  height: 80vh; /* Reduced height */
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   overflow: hidden;
+  margin: 0;
+  margin-top: 84px;
+  padding: 0;
+  border-radius: 8px;
 }
 
-/* Ensure image covers full width without gaps */
 .hero-image {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -2;
+  width: 100vw;
+  height: 80vh; /* Match height with hero */
+  object-fit: cover;
+  z-index: 0;
 }
 
-/* Overlay for blur and dark effect */
+
 .hero::before {
   content: "";
   position: absolute;
@@ -98,43 +97,52 @@ body, html {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(5px);
-  z-index: -1;
-}
-
-/* Text above overlay */
-.hero-text {
-  position: relative;
-  color: white;
-  font-size: 32px;
-  font-weight: bold;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.2); /* Darker overlay */
+  backdrop-filter: blur(6px); /* Slight blur */
   z-index: 1;
 }
 
+.hero-text {
+  position: relative;
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  z-index: 2;
+}
 
 /* Event Rules & Events List */
 .rules, .events {
   width: 90%;
   margin: 40px auto;
-  text-align: center;
   padding: 20px;
   background: white;
   border-radius: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
 }
 
-.rules h2, .events h2 {
+#rules h2, #events h2, #dev-team h2{
+  font-size: 28px;
   text-align: center;
-  display: inline-block;
   width: 100%;
+  margin-bottom: 15px;
 }
+
+
+.rules ul, .events ul {
+  padding-left: 20px;
+  width: 100%; 
+  max-width: 800px; 
+}
+
 
 .event-container {
   display: flex;
   justify-content: space-between;
   gap: 40px;
+  width: 100%;
 }
 
 .male-events, .female-events {
@@ -145,9 +153,54 @@ body, html {
   background: white;
 }
 
-.track-events, .field-events {
-  width: 45%;
+
+.event-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
 }
+
+.track-events, .field-events {
+  width: 50%; 
+  text-align: left;
+}
+
+
+.track-events ul, .field-events ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+/* Login Section */
+.login-section {
+  text-align: center;
+  margin: 40px 0;
+}
+
+
+.login-btn {
+  background-color: #007bff; 
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login-btn:hover {
+  background-color: #0056b3; 
+  transform: scale(1.02); 
+}
+
+.login-btn:active {
+  transform: scale(0.98); /* Press effect */
+}
+
 
 /* Developer Section */
 .dev-team {
@@ -169,6 +222,7 @@ body, html {
 
 .dev-card {
   width: 250px;
+  height: 280px;
   background: white;
   padding: 20px;
   border-radius: 10px;
@@ -177,12 +231,16 @@ body, html {
 }
 
 .dev-card img {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   object-fit: cover;
 }
-
+.dev-card .role{
+  font-weight: bold;
+  font-size: 18px;
+  color: rgb(82, 82, 82);
+}
 .dev-card h3 {
   margin: 10px 0 5px;
   font-size: 20px;
@@ -211,18 +269,19 @@ body, html {
   font-size: 20px;
 }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  filter: blur(5px);
-  z-index: 0;
-}
-
 .rules h2, .events h2 {
   text-align: left;
+}
+
+/* Footer */
+.footer {
+  background-color: #222; /* Dark background */
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: bold;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
